@@ -1,0 +1,30 @@
+{
+  "name": "collateral-arrangements-sapi",
+  "version": "0.1.0",
+  "description": "Collateral Arrangements Standard API",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.16.0",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.2",
+    "@hono/zod-openapi": "^0.16.0",
+    "hono": "^4.6.6",
+    "pino": "^9.4.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@scalar/hono-api-reference": "^0.9.19",
+    "@types/node": "^22.7.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
