@@ -1,4 +1,4 @@
-# Collateral Arrangements API
+# Service Architecture - CQRS Lightweight
 
 ## Structure
 
