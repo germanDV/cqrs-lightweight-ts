@@ -2,6 +2,7 @@
 
 ## Structure
 
+```
 src/
 ├── transport/             # HTTP/API Layer (could include gRPC)
 │   ├── controllers/
@@ -33,13 +34,14 @@ src/
 ├── config/
 │
 └── main.ts                      # Entry Point
+```
 
 ## Stack
 
 - Framework: Hono
 - Runtime: Node.js (>= 22.18)
 - Logging: pino (middleware)
-- OpenAPI: @hono/zod-openapi (OpenAPI 3.1), exposed at `/openapi.json`
+- OpenAPI: @hono/zod-openapi (OpenAPI 3.1)
 - Package Manager: pnpm (>= 10.16)
 
 1. Install dependencies
@@ -48,7 +50,7 @@ src/
    pnpm install
 ```
 
-2. Run in dev mode (with tsx watcher). The server starts at http://localhost:3000
+2. Run in dev mode (with tsx watcher)
 
 ```shell
    pnpm dev
@@ -67,5 +69,5 @@ src/
 
 ## Environment Variables
 
-- `PORT` (optional): Port to listen on. Default `3000`.
-- `LOG_LEVEL` (optional): pino log level (e.g., `info`, `debug`). Default `info`.
+- `PORT` (optional): Port to listen on.
+- `LOG_LEVEL` (optional): pino log level (e.g., `info`, `debug`).
