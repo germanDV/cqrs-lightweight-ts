@@ -1,5 +1,9 @@
 # Service Architecture - CQRS Lightweight
 
+## Architecture
+
+![Architecture](clean_architecture.png)
+
 ## Structure
 
 ```
