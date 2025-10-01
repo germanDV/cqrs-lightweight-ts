@@ -1,10 +1,11 @@
 import {IAuthorsRepository} from "../../application/interfaces/repositories/authors_repository.ts";
+import {ITransactionSession} from "../../application/interfaces/transaction_manager.ts";
 import {Author} from "../../domain/entities/author.ts";
 
 export class AuthorsRepository implements IAuthorsRepository {
     private authorsDB: Array<Author> = []
 
-    public async save(author: Author): Promise<void> {
+    public async save(author: Author, _session: ITransactionSession | undefined): Promise<void> {
         const existingIndex = this.authorsDB.findIndex(a => a.id === author.id)
         if (existingIndex > -1) {
             this.authorsDB[existingIndex] = author

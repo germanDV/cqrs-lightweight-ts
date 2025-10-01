@@ -14,6 +14,7 @@ import PublishBookCommand from "./application/commands/publish_book_command.ts";
 import GetAuthorsQuery from "./application/queries/get_authors_query.ts";
 import {authorsRestController} from "./transport/controllers/authors_controller.ts";
 import {booksRestController} from "./transport/controllers/books_controller.ts";
+import InMemoryTransactionManager from "./infrastructure/mongo_transaction_manager.js";
 
 const app = new OpenAPIHono<AppContext>()
 const logger = new Logger(process.env.LOG_LEVEL ?? 'info')
@@ -22,13 +23,14 @@ const logger = new Logger(process.env.LOG_LEVEL ?? 'info')
 const authorsRepository = new AuthorsRepository()
 const booksRepository = new BooksRepository()
 const outboxRepository = new OutboxRepository()
+const transactionManager = new InMemoryTransactionManager()
 
 // Services
 const domainEventsService = new DomainEventService(outboxRepository)
 
 // Commands
-const createAuthorCommand = new CreateAuthorCommand(authorsRepository, domainEventsService)
-const publishBookCommand = new PublishBookCommand(booksRepository, authorsRepository, domainEventsService)
+const createAuthorCommand = new CreateAuthorCommand(authorsRepository, domainEventsService, transactionManager)
+const publishBookCommand = new PublishBookCommand(booksRepository, authorsRepository, domainEventsService, transactionManager)
 
 // Queries
 const getAuthorsQuery = new GetAuthorsQuery(authorsRepository)
@@ -47,7 +49,7 @@ serve({ fetch: app.fetch, port, hostname: '0.0.0.0' })
 
 // Start background worker
 setInterval(() => {
-    domainEventsService.send().catch(err => console.log(`error sending event: ${err.message}`))
+    domainEventsService.send(undefined).catch(err => console.log(`error sending event: ${err.message}`))
 }, 15_000)
 
 logger.info({ msg: 'Server started', port })

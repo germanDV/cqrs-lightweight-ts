@@ -1,11 +1,12 @@
 import {IOutboxRepository} from "../../application/interfaces/repositories/outbox_repository.ts";
+import {ITransactionSession} from "../../application/interfaces/transaction_manager.ts";
 import OutboxEvent from "../../domain/entities/events/outbox_event.ts";
 import {NotFoundError} from "../../shared/errors/not_found_error.ts";
 
 export class OutboxRepository implements IOutboxRepository {
     private outboxDB: Array<OutboxEvent> = []
 
-    public async save(event: OutboxEvent): Promise<void> {
+    public async save(event: OutboxEvent, _session: ITransactionSession | undefined): Promise<void> {
         this.outboxDB.push(event)
     }
 
@@ -13,7 +14,7 @@ export class OutboxRepository implements IOutboxRepository {
         return this.outboxDB.filter(e => !e.sentAt)
     }
 
-    public async markAsSent(id: string): Promise<void> {
+    public async markAsSent(id: string, _session: ITransactionSession | undefined): Promise<void> {
         const eventIndex = this.outboxDB.findIndex(e => e.id === id)
         if (eventIndex === -1) throw new NotFoundError("event", id)
 
