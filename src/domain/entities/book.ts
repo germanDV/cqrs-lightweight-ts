@@ -8,7 +8,7 @@ export class Book {
     public readonly title: string
     public readonly authorIds: Array<string>
 
-    private constructor(isbn: string, title: string, authorIds: Array<string>) {
+    constructor(isbn: string, title: string, authorIds: Array<string>) {
         this._isbn = new ISBN(isbn)
         if (authorIds.length === 0) throw new AnonymousBookError(this._isbn)
         this.title = title

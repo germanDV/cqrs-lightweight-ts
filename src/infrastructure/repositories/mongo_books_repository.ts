@@ -8,4 +8,8 @@ export class BooksRepository implements IBooksRepository {
     public async save(book: Book, _session: ITransactionSession | undefined): Promise<void> {
         this.booksDB.push(book)
     }
+
+    public async list(): Promise<Array<Book>> {
+        return [...this.booksDB]
+    }
 }

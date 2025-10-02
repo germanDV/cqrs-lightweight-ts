@@ -14,3 +14,13 @@ export const CreateBookRequestBody = z.object({
         description: "List of author IDs",
     }),
 }).openapi("CreateBookRequestBody")
+
+export const BookResponse = z.object({
+    isbn: z.string().openapi({ description: "Book's ISBN" }),
+    title: z.string().openapi({ description: "Book's Title"}),
+    availableCopies: z.number().gte(0).openapi({ description: "Copies available in the library "}),
+}).openapi("BookResponse")
+
+export const BooksResponse = z
+    .object({ items: z.array(BookResponse)})
+    .openapi("BooksResponse")
