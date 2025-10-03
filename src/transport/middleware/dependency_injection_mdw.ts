@@ -1,6 +1,6 @@
 import {OpenAPIHono} from "@hono/zod-openapi";
 import AppContext from "../../config/app_context.js";
-import Logger from "../../infrastructure/logging/logger.ts";
+import Logger from "../../infrastructure/logging/logger.js";
 
 type Dependencies = {
     logger: Logger

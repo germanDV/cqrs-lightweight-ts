@@ -1,6 +1,6 @@
-import {IBooksRepository} from "../../application/interfaces/repositories/books_repository.ts";
-import {ITransactionSession} from "../../application/interfaces/transaction_manager.ts";
-import {Book} from "../../domain/entities/book.ts";
+import {IBooksRepository} from "../../application/interfaces/repositories/books_repository.js";
+import {ITransactionSession} from "../../application/interfaces/transaction_manager.js";
+import {Book} from "../../domain/entities/book.js";
 
 export class BooksRepository implements IBooksRepository {
     private booksDB: Array<Book> = []

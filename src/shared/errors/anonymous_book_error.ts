@@ -1,6 +1,6 @@
 import {z} from "@hono/zod-openapi";
-import {ErrorSchema} from "./error_schema.ts";
-import {ISBN} from "../../domain/entities/value_objects/isbn.ts";
+import {ErrorSchema} from "./error_schema.js";
+import {ISBN} from "../../domain/entities/value_objects/isbn.js";
 
 export default class AnonymousBookError extends Error {
     constructor(isbn: ISBN) {

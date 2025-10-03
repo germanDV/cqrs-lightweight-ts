@@ -1,4 +1,4 @@
-import {DomainEvent} from "./domain_event.ts"
+import {DomainEvent} from "./domain_event.js"
 
 export default class BookCreatedEvent implements DomainEvent {
     public readonly eventType = "BOOK_CREATED"

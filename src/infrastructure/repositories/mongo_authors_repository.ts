@@ -1,6 +1,6 @@
-import {IAuthorsRepository} from "../../application/interfaces/repositories/authors_repository.ts";
-import {ITransactionSession} from "../../application/interfaces/transaction_manager.ts";
-import {Author} from "../../domain/entities/author.ts";
+import {IAuthorsRepository} from "../../application/interfaces/repositories/authors_repository.js";
+import {ITransactionSession} from "../../application/interfaces/transaction_manager.js";
+import {Author} from "../../domain/entities/author.js";
 
 export class AuthorsRepository implements IAuthorsRepository {
     private authorsDB: Array<Author> = []

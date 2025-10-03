@@ -1,5 +1,5 @@
 import {randomUUID} from "node:crypto";
-import {DomainEvent} from "./domain_event.ts";
+import {DomainEvent} from "./domain_event.js";
 
 export default class OutboxEvent {
     public readonly id: string;

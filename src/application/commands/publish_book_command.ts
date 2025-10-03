@@ -1,11 +1,11 @@
 import {z} from "@hono/zod-openapi";
-import {IBooksRepository} from "../interfaces/repositories/books_repository.ts";
-import {IAuthorsRepository} from "../interfaces/repositories/authors_repository.ts";
+import {IBooksRepository} from "../interfaces/repositories/books_repository.js";
+import {IAuthorsRepository} from "../interfaces/repositories/authors_repository.js";
 import {CreateBookRequestBody} from "../../transport/dtos/books_dtos.js";
-import {ResourceCreatedResponse} from "../../transport/dtos/common_dtos.ts";
-import {Book} from "../../domain/entities/book.ts";
-import DomainEventService from "../services/domain_events_service.ts";
-import {ITransactionManager} from "../interfaces/transaction_manager.ts";
+import {ResourceCreatedResponse} from "../../transport/dtos/common_dtos.js";
+import {Book} from "../../domain/entities/book.js";
+import DomainEventService from "../services/domain_events_service.js";
+import {ITransactionManager} from "../interfaces/transaction_manager.js";
 
 export default class PublishBookCommand {
     constructor(

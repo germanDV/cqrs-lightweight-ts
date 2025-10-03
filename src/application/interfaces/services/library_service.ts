@@ -1,4 +1,4 @@
-import {ISBN} from "../../../domain/entities/value_objects/isbn.ts";
+import {ISBN} from "../../../domain/entities/value_objects/isbn.js";
 
 export interface ILibraryService {
     /** Returns the number of copies available in the library. */

@@ -1,6 +1,6 @@
-import BookAvailability from "../../domain/entities/value_objects/book_availability.ts";
-import {IBooksRepository} from "../interfaces/repositories/books_repository.ts";
-import {ILibraryService} from "../interfaces/services/library_service.ts";
+import BookAvailability from "../../domain/entities/value_objects/book_availability.js";
+import {IBooksRepository} from "../interfaces/repositories/books_repository.js";
+import {ILibraryService} from "../interfaces/services/library_service.js";
 
 
 export default class GetBooksQuery {

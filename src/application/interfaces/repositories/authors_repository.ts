@@ -1,5 +1,5 @@
-import {Author} from "../../../domain/entities/author.ts";
-import {ITransactionSession} from "../transaction_manager.ts";
+import {Author} from "../../../domain/entities/author.js";
+import {ITransactionSession} from "../transaction_manager.js";
 
 export interface IAuthorsRepository {
    save(author: Author, session: ITransactionSession | undefined): Promise<void>

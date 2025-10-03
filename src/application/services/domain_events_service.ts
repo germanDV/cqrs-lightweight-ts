@@ -1,6 +1,6 @@
-import {IOutboxRepository} from "../interfaces/repositories/outbox_repository.ts";
-import {DomainEvent} from "../../domain/entities/events/domain_event.ts";
-import OutboxEvent from "../../domain/entities/events/outbox_event.ts";
+import {IOutboxRepository} from "../interfaces/repositories/outbox_repository.js";
+import {DomainEvent} from "../../domain/entities/events/domain_event.js";
+import OutboxEvent from "../../domain/entities/events/outbox_event.js";
 import {ITransactionSession} from "../interfaces/transaction_manager.js";
 
 export default class DomainEventService {

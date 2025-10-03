@@ -1,10 +1,10 @@
 import {z, createRoute, OpenAPIHono} from "@hono/zod-openapi";
-import {ResourceCreatedResponse} from "../dtos/common_dtos.ts";
-import {BadRequestError} from "../../shared/errors/bad_request_error.ts";
-import {BooksResponse, CreateBookRequestBody} from "../dtos/books_dtos.ts";
-import AppContext from "../../config/app_context.ts";
-import PublishBookCommand from "../../application/commands/publish_book_command.ts";
-import GetBooksQuery from "../../application/queries/get_books_query.ts";
+import {ResourceCreatedResponse} from "../dtos/common_dtos.js";
+import {BadRequestError} from "../../shared/errors/bad_request_error.js";
+import {BooksResponse, CreateBookRequestBody} from "../dtos/books_dtos.js";
+import AppContext from "../../config/app_context.js";
+import PublishBookCommand from "../../application/commands/publish_book_command.js";
+import GetBooksQuery from "../../application/queries/get_books_query.js";
 
 const createBookRoute = createRoute({
     method: "post",

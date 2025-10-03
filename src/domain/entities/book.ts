@@ -1,7 +1,7 @@
-import {ISBN} from "./value_objects/isbn.ts"
-import AnonymousBookError from "../../shared/errors/anonymous_book_error.ts"
-import BookCreatedEvent from "./events/book_created_event.ts"
-import {DomainEvent} from "./events/domain_event.ts";
+import {ISBN} from "./value_objects/isbn.js"
+import AnonymousBookError from "../../shared/errors/anonymous_book_error.js"
+import BookCreatedEvent from "./events/book_created_event.js"
+import {DomainEvent} from "./events/domain_event.js";
 
 export class Book {
     private readonly _isbn: ISBN

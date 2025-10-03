@@ -1,4 +1,4 @@
-import Logger from "../infrastructure/logging/logger.ts"
+import Logger from "../infrastructure/logging/logger.js"
 
 type AppContext = {
     Variables: {

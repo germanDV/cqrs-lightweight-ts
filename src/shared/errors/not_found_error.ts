@@ -1,5 +1,5 @@
 import {z} from "@hono/zod-openapi";
-import {ErrorSchema} from "./error_schema.ts";
+import {ErrorSchema} from "./error_schema.js";
 
 export class NotFoundError extends Error {
     constructor(entityType: string, entityId: string) {

@@ -6,9 +6,11 @@
   "type": "module",
   "packageManager": "pnpm@10.16.0",
   "scripts": {
-    "dev": "tsx watch src/main.ts",
+    "dev:rest": "tsx watch src/apps/rest/main.ts",
+    "start:rest": "node dist/apps/rest/main.js",
+    "dev:outbox": "tsx watch src/apps/outbox_worker/main.ts",
+    "start:outbox": "node dist/apps/outbox_worker/main.js",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/main.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "engines": {

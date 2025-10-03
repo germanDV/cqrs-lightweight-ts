@@ -1,4 +1,4 @@
-import {Book} from "../book.ts";
+import {Book} from "../book.js";
 
 /** Composition of domain (`Book`) and external data (`availability`). */
 export default class BookAvailability {

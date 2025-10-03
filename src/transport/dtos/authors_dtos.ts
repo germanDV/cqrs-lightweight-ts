@@ -1,5 +1,5 @@
 import {z} from "@hono/zod-openapi";
-import {paginate} from "./common_dtos.ts";
+import {paginate} from "./common_dtos.js";
 
 export const CreateAuthorRequestBody = z.object({
     fullName: z.string().min(2).max(16).openapi({

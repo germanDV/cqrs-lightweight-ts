@@ -1,5 +1,5 @@
-import OutboxEvent from "../../../domain/entities/events/outbox_event.ts"
-import {ITransactionSession} from "../transaction_manager.ts";
+import OutboxEvent from "../../../domain/entities/events/outbox_event.js"
+import {ITransactionSession} from "../transaction_manager.js";
 
 export interface IOutboxRepository {
     save(event: OutboxEvent, session: ITransactionSession | undefined): Promise<void>

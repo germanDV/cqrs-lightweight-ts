@@ -1,10 +1,10 @@
 import {z, createRoute, OpenAPIHono} from "@hono/zod-openapi"
-import AppContext from "../../config/app_context.ts"
-import {PaginationQuery, ResourceCreatedResponse} from "../dtos/common_dtos.ts";
-import {AuthorsResponse, CreateAuthorRequestBody} from "../dtos/authors_dtos.ts";
-import {BadRequestError} from "../../shared/errors/bad_request_error.ts";
-import CreateAuthorCommand from "../../application/commands/create_author_command.ts";
-import GetAuthorsQuery from "../../application/queries/get_authors_query.ts";
+import AppContext from "../../config/app_context.js"
+import {PaginationQuery, ResourceCreatedResponse} from "../dtos/common_dtos.js";
+import {AuthorsResponse, CreateAuthorRequestBody} from "../dtos/authors_dtos.js";
+import {BadRequestError} from "../../shared/errors/bad_request_error.js";
+import CreateAuthorCommand from "../../application/commands/create_author_command.js";
+import GetAuthorsQuery from "../../application/queries/get_authors_query.js";
 
 const getAuthorsRoute = createRoute({
     method: "get",

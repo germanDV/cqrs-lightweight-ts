@@ -1,7 +1,7 @@
 import {z} from "@hono/zod-openapi";
-import {IAuthorsRepository} from "../interfaces/repositories/authors_repository.ts";
-import {PaginationQuery} from "../../transport/dtos/common_dtos.ts";
-import {Author} from "../../domain/entities/author.ts";
+import {IAuthorsRepository} from "../interfaces/repositories/authors_repository.js";
+import {PaginationQuery} from "../../transport/dtos/common_dtos.js";
+import {Author} from "../../domain/entities/author.js";
 
 export default class GetAuthorsQuery {
     constructor(private readonly authorsRepo: IAuthorsRepository) {}

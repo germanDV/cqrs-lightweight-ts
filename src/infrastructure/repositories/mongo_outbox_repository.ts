@@ -1,7 +1,7 @@
-import {IOutboxRepository} from "../../application/interfaces/repositories/outbox_repository.ts";
-import {ITransactionSession} from "../../application/interfaces/transaction_manager.ts";
-import OutboxEvent from "../../domain/entities/events/outbox_event.ts";
-import {NotFoundError} from "../../shared/errors/not_found_error.ts";
+import {IOutboxRepository} from "../../application/interfaces/repositories/outbox_repository.js";
+import {ITransactionSession} from "../../application/interfaces/transaction_manager.js";
+import OutboxEvent from "../../domain/entities/events/outbox_event.js";
+import {NotFoundError} from "../../shared/errors/not_found_error.js";
 
 export class OutboxRepository implements IOutboxRepository {
     private outboxDB: Array<OutboxEvent> = []

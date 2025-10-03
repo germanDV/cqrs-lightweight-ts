@@ -1,10 +1,10 @@
 import {z} from "@hono/zod-openapi";
-import {CreateAuthorRequestBody} from "../../transport/dtos/authors_dtos.ts";
-import {Author} from "../../domain/entities/author.ts";
-import {IAuthorsRepository} from "../interfaces/repositories/authors_repository.ts";
-import {ResourceCreatedResponse} from "../../transport/dtos/common_dtos.ts";
+import {CreateAuthorRequestBody} from "../../transport/dtos/authors_dtos.js";
+import {Author} from "../../domain/entities/author.js";
+import {IAuthorsRepository} from "../interfaces/repositories/authors_repository.js";
+import {ResourceCreatedResponse} from "../../transport/dtos/common_dtos.js";
 import DomainEventService from "../services/domain_events_service.js";
-import {ITransactionManager} from "../interfaces/transaction_manager.ts";
+import {ITransactionManager} from "../interfaces/transaction_manager.js";
 
 export default class CreateAuthorCommand {
     constructor(

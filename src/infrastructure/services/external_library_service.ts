@@ -1,6 +1,6 @@
-import {ILibraryService} from "../../application/interfaces/services/library_service.ts";
-import {ISBN} from "../../domain/entities/value_objects/isbn.ts";
-import CircuitBreaker from "../../shared/utils/circuit_breaker.ts";
+import {ILibraryService} from "../../application/interfaces/services/library_service.js";
+import {ISBN} from "../../domain/entities/value_objects/isbn.js";
+import CircuitBreaker from "../../shared/utils/circuit_breaker.js";
 
 class GrpcClient {
     constructor(private readonly url: string) {}

@@ -1,4 +1,4 @@
-import {ITransactionManager, ITransactionSession} from "../application/interfaces/transaction_manager.ts"
+import {ITransactionManager, ITransactionSession} from "../application/interfaces/transaction_manager.js"
 
 class InMemoryTransactionSession implements ITransactionSession {
     constructor(public readonly id: string){}
